@@ -57,7 +57,8 @@ if [[ -n "$(which apt)" ]]; then
     ln -s /home/$ME/dotfiles/sshfiles/authorized_keys /home/$ME/.ssh/authorized_keys
     ln -s /home/$ME/dotfiles/sshfiles/config /home/$ME/.ssh/config
     # https://www.linuxandubuntu.com/home/installing-vundle-the-plugin-manager-for-vim
-    git clone https://github.com/VundleVim/Vundle.vim.git >> /home/$ME/.bashrc.vim/bundle/Vundle.vim
+    mkdir -p 
+    git clone https://github.com/VundleVim/Vundle.vim.git >> /home/$ME/.vim/bundle/Vundle.vim
     echo "set nocompatible
     filetype off
     set rtp+=$ME/.vim/bundle/Vundle.vim
