@@ -38,25 +38,26 @@ if [[ -n "$(which apt)" ]]; then
     echo ".fuse_hidden*
     .directory
     .Trash-*
-    .nfs*" >> ~/.gitignore_global
-    git config --global core.excludesfile ~/.gitignore_global
+    .nfs*" >> /home/$ME/.gitignore_global
+    git config --global core.excludesfile /home/$ME/.gitignore_global
     git config --global help.autocorrect 20
     ln -s /home/$ME/dotfiles/gitfiles/.gitconfig /home/$ME/.gitconfig
-    alias ls="ls -lah" >> ~/.bashrc
-    alias ..="cd .." >> ~/.bashrc
-    alias da='date "+%Y-%m-%d %A %T %Z"'
+    alias ls="ls -lah" >> /home/$ME/.bashrc
+    alias ..="cd .." >> /home/$ME/.bashrc
+    alias da='date "+%Y-%m-%d %A %T %Z"' >> /home/$ME/.bashrc
     ln -s /home/$ME/dotfiles/bashrc /home/$ME/.bashrc
-    if [ ! -d "$~/.ssh" ]; then
+    if [ !(-d "$~/.ssh") ]; then
         mkdir .ssh
     fi
-    echo "Host fry
+    echo "Host frycat git config
+    
         User w248exs
         HostName fry.cs.wright.edu
         Port 22" >> .ssh/config
     ln -s /home/$ME/dotfiles/sshfiles/authorized_keys /home/$ME/.ssh/authorized_keys
     ln -s /home/$ME/dotfiles/sshfiles/config /home/$ME/.ssh/config
     # https://www.linuxandubuntu.com/home/installing-vundle-the-plugin-manager-for-vim
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    git clone https://github.com/VundleVim/Vundle.vim.git alias ls="ls -lah" >> /home/$ME/.bashrc.vim/bundle/Vundle.vim
     echo "set nocompatible
     filetype off
     set rtp+=$ME/.vim/bundle/Vundle.vim
@@ -66,8 +67,8 @@ if [[ -n "$(which apt)" ]]; then
     call vundle#end()
     filetype plugin indent on" >> .vimrc
     vim +PluginInstall +qall
-    mkdir -p ~/.vim/pack/tpope/start
-    cd ~/.vim/pack/tpope/start
+    mkdir -p /home/$ME/.vim/pack/tpope/start
+    cd /home/$ME/.vim/pack/tpope/start
     git clone https://tpope.io/vim/fugitive.git
     vim -u NONE -c "helptags fugitive/doc" -c q
 else
