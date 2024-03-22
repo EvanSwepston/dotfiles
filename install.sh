@@ -21,7 +21,8 @@ if [[ -n "$(which apt)" ]]; then
             libxcomposite1 \
             libasound2 \
             libxi6 \
-            libxtst6
+            libxtst6 \
+            zip unzip
     if [[ -e $(ls Anaconda3*.sh 2> /dev/null | head -1) ]]; then
         echo "Using found installer"
     else
@@ -32,6 +33,7 @@ if [[ -n "$(which apt)" ]]; then
     echo "PATH=$PATH:/home/kduncan/anaconda3/bin" >> /home/$ME/.profile
     bash aws.sh
     ln -s /home/$ME/dotfiles/files/.bashrc /home/$ME/.bashrc
+    . /home/$ME/.bashrc
     if ! [ -d "$~/.ssh" ]; then
         mkdir .ssh
     fi
