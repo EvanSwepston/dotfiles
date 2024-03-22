@@ -41,8 +41,8 @@ if [[ -n "$(which apt)" ]]; then
     ln -s /home/$ME/dotfiles/files/authorized_keys /home/$ME/.ssh/authorized_keys
     ln -s /home/$ME/dotfiles/files/config /home/$ME/.ssh/config
     # https://www.linuxandubuntu.com/home/installing-vundle-the-plugin-manager-for-vim
-    ln -s /home/$ME/dotfiles/files/.vimrc /home/$ME/.vimrc
     bash vundle.sh
+    ln -s /home/$ME/dotfiles/files/.vimrc /home/$ME/.vimrc
 else
     echo "apt is not installed"
     exit 1
