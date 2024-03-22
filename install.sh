@@ -30,7 +30,8 @@ if [[ -n "$(which apt)" ]]; then
     fi
     # https://docs.anaconda.com/free/anaconda/install/linux/
     bash Anaconda3-2024.02-1-Linux-x86_64.sh -b -p /home/$ME/Anaconda3
-    echo "PATH=$PATH:/home/kduncan/anaconda3/bin" >> /home/$ME/.profile
+    echo "PATH=$PATH:/home/ubuntu/Anaconda3/bin" >> /home/$ME/.profile
+    . /home/$ME/.profile
     bash aws.sh
     ln -s /home/$ME/dotfiles/files/.bashrc /home/$ME/.bashrc
     . /home/$ME/.bashrc
