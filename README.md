@@ -15,4 +15,4 @@ Executing the command `./install.sh` will set up the following:
     - authorized keys
     - host config
 5. Vundle
-    - 
+    - Better vim
